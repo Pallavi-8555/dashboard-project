@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <!-- Output CSS -->
+    <link href="./dist/output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 overflow-y-hidden">
+    <div class="flex flex-col min-h-screen">
+
+        <!--  Navbar Starts-->
+        <div class="navbar flex items-center justify-between shadow px-6 py-3">
+            <div class="flex ml-12">
+                <img class="w-7 h-7" src="images/dashboard.png" alt="dashboard">
+                <h1 class="ml-3 cursor-pointer font-bold text-xl">Admin Dashboard</h1>
+            </div>
+
+
+            <div class="searchbar relative flex">
+                <img class="w-4 h-4 absolute top-3 left-3" src="images/search.png" alt="search icon">
+                <input type="text" placeholder="Search..."
+                    class="w-80 h-10 border border-blue-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 rounded-lg pl-10 outline-none">
+            </div>
+
+
+            <div class="end flex mr-18">
+                <div class="toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="cursor-pointer w-7 h-7 text-gray-700 dark:text-gray-200" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />
+                    </svg>
+                </div>
+
+                <div class="profile">
+                    <img class="w-7 h-7 ml-8 cursor-pointer" src="images/user.png" alt="user">
+                </div>
+            </div>
+        </div>
+        <!--  Navbar Ends -->
+
+
+        <!--  Sidebar + Main Section -->
+        <div class="flex ">
+            <!-- Sidebar -->
+            <div class="sidebar bg-gray-100 w-60 space-y-3 pt-5">
+
+                <div class="flex ml-10 cursor-pointer w-fit hover:text-blue-400 hover:bg-slate-200 p-2 rounded">
+                    <img class="w-6 h-6" src="images/side-dashboard.png">
+                    <h2 class="pl-3">Dashboard</h2>
+                </div>
+
+                <div class="flex ml-10 cursor-pointer w-fit hover:text-blue-400 hover:bg-slate-200 p-2 rounded">
+                    <img class="w-6 h-6" src="images/side-user.png">
+                    <h2 class="pl-3">Users</h2>
+                </div>
+
+                 <div class="flex ml-10 cursor-pointer w-fit hover:text-blue-400 hover:bg-slate-200 p-2 rounded">
+                    <img class="w-6 h-6" src="images/side-orders.png">
+                    <h2 class="pl-3">Orders</h2>
+                </div>
+
+                <div class="flex ml-10 cursor-pointer w-fit hover:text-blue-400 hover:bg-slate-200 p-2 rounded">
+                    <img class="w-6 h-6" src="images/side-products.png">
+                    <h2 class="pl-3">Products</h2>
+                </div>
+
+                <div class="flex ml-10 cursor-pointer w-fit hover:text-blue-400 hover:bg-slate-200 p-2 rounded">
+                    <img class="w-6 h-6" src="images/side-settings.png">
+                    <h2 class="pl-3">Settings</h2>
+                </div>
+
+            </div>
+
+
+            <!-- Main Content -->
+            <div class="main pt-8 pl-24 w-full">
+                <div class="grid grid-cols-2 gap-x-8">
+                    <div>
+                        <!-- Cards -->
+                        <div class="grid grid-cols-2 gap-y-4 gap-x-14">
+                            <div class="bg-white rounded-lg shadow w-80 h-24 flex items-center pl-3">
+                                <img class="w-10 h-10 mr-3.5" src="images/user.png">
+                                <div>
+                                    <h3 class="text-lg font-semibold">Total Users</h3>
+                                    <p class="text-2xl font-bold">1,250</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-lg shadow w-80 h-24 flex items-center pl-3">
+                                <img class="w-10 h-10 mr-3.5" src="images/revenu.png">
+                                <div>
+                                    <h3 class="text-lg font-semibold">Revenue</h3>
+                                    <p class="text-2xl font-bold">50,000</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-lg shadow w-80 h-24 flex items-center pl-3">
+                                <img class="w-10 h-10 mr-3.5" src="images/order.png">
+                                <div>
+                                    <h3 class="text-lg font-semibold">Orders</h3>
+                                    <p class="text-2xl font-bold">3,456</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-lg shadow w-80 h-24 flex items-center pl-3">
+                                <img class="w-10 h-10 mr-3.5" src="images/pending.png">
+                                <div>
+                                    <h3 class="text-lg font-semibold">Pending Requests</h3>
+                                    <p class="text-2xl font-bold">120</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Orders -->
+                        <div class="recent bg-white shadow-lg rounded-lg w-[650px] mt-8 p-6">
+                            <div class="orders flex justify-around">
+                                <h3 class="font-semibold text-lg">Recent Orders</h3>
+                                <p class="text-blue-500 hover:underline cursor-pointer">View All</p>
+                            </div>
+
+                            <div class="heading flex justify-around mt-4 text-slate-800 font-semibold p-3">
+                                <p>Order ID</p>
+                                <p>Customer</p>
+                                <p>Status</p>
+                            </div>
+                            <hr>
+
+                            <div class="heading flex justify-around mt-4">
+                                <p>10003</p>
+                                <p>Payal Sain</p>
+                                <p class="bg-green-300 rounded-lg px-1">Delivered</p>
+                            </div>
+
+                            <div class="heading flex justify-around mt-4">
+                                <p>23675</p>
+                                <p>Shruti Sharma</p>
+                                <p class="bg-yellow-200 rounded-lg px-1">Pending</p>
+                            </div>
+
+                            <div class="heading flex justify-around mt-4">
+                                <p>67538</p>
+                                <p>Akshay Rokade</p>
+                                <p class="bg-red-400 rounded-lg px-1">Cancelled</p>
+                            </div>
+
+                            <div class="heading flex justify-around mt-4">
+                                <p>90876</p>
+                                <p>Prapti Lahane</p>
+                                <p class="bg-yellow-200 rounded-lg px-1">Pending</p>
+                            </div>
+
+                            <div class="heading flex justify-around mt-4">
+                                <p>45676</p>
+                                <p>Sumit Jadhav</p>
+                                <p class="bg-green-300 rounded-lg px-1">Delivered</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!---Charts-->
+                    <div class="space-y-8 ml-14">
+                        <!-- Chart 1 (Bar Chart) -->
+
+                        <div
+                            class="analytics bg-white shadow-lg rounded-lg flex justify-center items-center w-[500px] h-[250px]">
+                            <canvas id="ordersChart"></canvas>
+                        </div>
+
+                        <!--- 2. Pie Chart -->
+                        <div
+                            class="analytics bg-white shadow-lg rounded-lg flex justify-center items-center w-[500px] h-[300px] ">
+                            <canvas id="statusChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ✅ Footer -->
+        <footer class="bg-gray-50 mt-7">
+            <div class="flex justify-center text-gray-400">
+                <p>@ 2025 Pallavi Kute. All Rights Reserved</p>
+            </div>
+        </footer>
+    </div>
+
+
+    <!---Script for charts-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        //Chart 1
+        const myChart = document.getElementById('ordersChart').getContext('2d');
+
+        new Chart(myChart, {
+            type: 'bar',
+            data: {
+                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+                datasets: [{
+                    label: "Orders",
+                    data: [120, 150, 180, 100, 220, 170],
+                    backgroundColor: [
+                        "#3B82F6",
+                        "#34D399",
+                        "#FBBF24",
+                        "#F87171",
+                        "#A78BFA",
+                        "#F472B6"
+                    ]
+
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Orders',
+                        font: {
+                            size: 18,
+                            weight: 'bold'
+                        },
+
+                    }
+                }
+            }
+        });
+
+
+
+        //Chart 2
+
+        const statusChart = document.getElementById('statusChart').getContext('2d');
+
+        new Chart(statusChart, {
+            type: 'pie',
+            data: {
+                labels: ["Completed", "Pending", "Cancelled", "In Progress"],
+                datasets: [{
+                    label: "Order Status",
+                    data: [45, 25, 15, 15],
+                    backgroundColor: [
+                        "#34D399",
+                        "#FBBF24",
+                        "#F87171",
+                        "#60A5FA"
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Sales Status',
+                        font: {
+                            size: 18,
+                            weight: 'bold'
+                        },
+
+                    }
+                }
+            }
+        });
+
+
+    </script>
+</body>
+</html>
